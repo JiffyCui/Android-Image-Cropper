@@ -1,7 +1,7 @@
 buildscript {
     repositories {
-        jcenter()
         google()
+        mavenCentral()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.2.1'
@@ -10,15 +10,20 @@ buildscript {
 
 allprojects {
     repositories {
-        jcenter()
-        maven {
-            url "https://maven.google.com"
-        }
+        google()
+        mavenCentral()
+
+        maven { url "https://jitpack.io" }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        maven { url 'https://maven.aliyun.com/nexus/content/groups/public' }
+
     }
 }
 
 ext {
     compileSdkVersion = 28
+    minSdkVersion = 16
     buildToolsVersion = '28.0.3'
     androidXLibraryVersion = '1.0.0'
 
